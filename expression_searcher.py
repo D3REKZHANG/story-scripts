@@ -3,7 +3,7 @@ import docx;
 
 character = str(input("Character: "))
 
-direcs = ['Act 1', 'Act 2 Lilith', 'Act 2 Prim', 'Act 3 Lilith','Act 3 Prim']
+direcs = ['Act 1']#['Act 1', 'Act 2 Lilith', 'Act 2 Prim', 'Act 3 Lilith','Act 3 Prim']
 
 expressions = {}
 
@@ -15,7 +15,7 @@ for direc in direcs:
         for line in doc.paragraphs:
             for run in line.runs:
                 s = run.text.split()
-                if len(s)>=3 and s[0] == character:
+                if len(s)>=3 and s[0].replace('?','').replace(':','') == character:
                     if '(' in s[1] and ')' in s[2]:
                         b1 = s[1].index('(')
                         b2 = s[2].index(')')
