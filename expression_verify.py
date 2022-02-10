@@ -24,11 +24,11 @@ workbook.close()
 
 chars = expressions.keys()
 
-direcs = ['Act 1', 'Act 2 Lilith', 'Act 2 Prim', 'Act 3 Lilith','Act 3 Prim']
+direcs = ['Act 1', 'Act 2 Lilith', 'Act 2 Prim']# 'Act 3 Lilith','Act 3 Prim']
 
 errors = {}
 
-unlisted = []
+unlisted = set()
  
 for direc in direcs:
     for f in os.listdir("./"+direc):
@@ -37,12 +37,10 @@ for direc in direcs:
             for run in line.runs:
                 s = run.text.split()
                 if len(s)>=3:
-                    char = s[0]
-                    if char[0] == '?':
-                        char = char[1:]
+                    char = s[0].replace('?', '').replace(':','')
                     if '(' in s[1] and ')' in s[2]:
                         if char not in chars:
-                            unlisted.append(f"{direc}/{f}: {char}")
+                            unlisted.add(f"{direc}/{f}: {char}")
                             continue
                         b1 = s[1].index('(')
                         b2 = s[2].index(')')
@@ -52,9 +50,9 @@ for direc in direcs:
                             expr = f"{char} ({expr})"
                             if expr in errors:
                                 if file not in errors[expr]:
-                                    errors[expr].append(f"{direc}/{f}")
+                                    errors[expr].add(f"{direc}/{f}")
                             else:
-                                errors[expr] = [file]
+                                errors[expr] = set([file])
 
 keys = sorted(errors.keys())
 for key in keys:
@@ -63,5 +61,6 @@ for key in keys:
         print("    " + f)
     print()
 
+print("UNLISTED --------- ")
 for error in unlisted:
     print(error)

@@ -1,0 +1,62 @@
+Back of School
+Batting Cage
+Bedroom
+Bridge
+Cafe 1
+Classroom
+Clothes Store 1
+Coffee Shop
+Diner
+Downtown
+Front of Batting Cage
+Front of House
+Front of Library
+Front of Music School
+Front of School
+Grocery Store
+Hallway 1
+Hallway 2
+Home Station
+Ice Cream Shop
+Intersection 1
+Intersection 2
+Kitchen
+Library
+Movie Theatre
+Movie Theatre Lobby
+Music School Road 1
+Music School Road 2
+Music Store
+Neighbourhood Road 1
+Neighbourhood Road 2
+Pancake House
+Park 1
+Playground
+Practice Diamond
+Riverside
+School Roof
+Shopping District
+Stairwell
+Teacher's Office
+Train
+Parking Lot
+Udon Shop
+Convenience Store
+Front of Convenience Store
+Baseball Diamond
+MacDonald's
+MacDonald's Seating
+Cafe 2
+Neighbourhood Road 3
+Lilith's House
+Front of Hospital
+Hospital Lobby
+Hospital Hallway
+Mom's Room
+Music Room
+Mara's Apartment
+Electronics Store
+Mara's School Roof
+Mara's School Hallway
+Mara's School
+Local Shrine
