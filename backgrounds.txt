@@ -1,14 +1,24 @@
 Back of School
+Bakery
+Baseball Diamond
 Batting Cage
 Bedroom
+Black Screen
+Board Game Cafe
 Bridge
 Cafe 1
+Cafe 2
+Cafe 3
 Classroom
 Clothes Store 1
 Coffee Shop
+Convenience Store
 Diner
 Downtown
+Electronics Store
 Front of Batting Cage
+Front of Convenience Store
+Front of Hospital
 Front of House
 Front of Library
 Front of Music School
@@ -17,46 +27,50 @@ Grocery Store
 Hallway 1
 Hallway 2
 Home Station
+Hospital Hallway
+Hospital Lobby
+Hospital Room
 Ice Cream Shop
 Intersection 1
 Intersection 2
 Kitchen
 Library
+Lilith's House
+Local Shrine
+MacDonald's
+MacDonald's Seating
+Mara's Apartment
+Mara's School
+Mara's School Hallway
+Mara's School Roof
 Movie Theatre
 Movie Theatre Lobby
+Music Room
+Music School Auditorium
 Music School Road 1
 Music School Road 2
+Music School Road 3
+Music School Station
 Music Store
 Neighbourhood Road 1
 Neighbourhood Road 2
-Pancake House
+Neighbourhood Road 3
 Park 1
+Park 2
+Parking Lot
+Pawn Shop
 Playground
 Practice Diamond
+Prim's House
+Restaurant Area
 Riverside
+School Library
 School Roof
 Shopping District
 Stairwell
+Station Platform
+Sushi Restaurant
 Teacher's Office
 Train
-Parking Lot
 Udon Shop
-Convenience Store
-Front of Convenience Store
-Baseball Diamond
-MacDonald's
-MacDonald's Seating
-Cafe 2
-Neighbourhood Road 3
-Lilith's House
-Front of Hospital
-Hospital Lobby
-Hospital Hallway
-Mom's Room
-Music Room
-Mara's Apartment
-Electronics Store
-Mara's School Roof
-Mara's School Hallway
-Mara's School
-Local Shrine
+Yi's Pizzaria
