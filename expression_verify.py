@@ -45,6 +45,8 @@ for direc in direcs:
                         b1 = s[1].index('(')
                         b2 = s[2].index(')')
                         expr = s[1][b1+1:] + " " + s[2][:b2]
+                        if expr == "shy shy":
+                            print(char)
                         if expr not in expressions[char]:
                             file = f"{direc}/{f}"
                             expr = f"{char} ({expr})"
@@ -54,8 +56,7 @@ for direc in direcs:
                             else:
                                 errors[expr] = set([file])
 
-keys = sorted(errors.keys())
-for key in keys:
+for key in sorted(errors.keys()):
     print(key)
     for f in errors[key]:
         print("    " + f)
