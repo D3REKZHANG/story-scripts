@@ -4,7 +4,7 @@ from helper import l_sorted
 
 s = [];
 
-direcs = ["Act 1", "Act 2 Prim", "Act 2 Lilith", "Act 3 Lilith"]
+direcs = ["Act 1", "Act 2 Prim", "Act 2 Lilith", "Act 3 Lilith", "Act 3 Prim"]
 searches = []
 o = input('case sensitive? (y/n) ')
 

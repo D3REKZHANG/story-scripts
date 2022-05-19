@@ -32,8 +32,6 @@ for f in os.listdir("./"+direc):
                     else:
                         store[char] = { pose : set([expr]) }
 
-print(store.keys())
-
 '''
 OPENPYXL SECTION
 '''
@@ -43,6 +41,7 @@ workbook = openpyxl.Workbook()
 workbook.remove(workbook['Sheet'])
 
 for char in store:
+    poses = {k: v for k, v in sorted(store[char].items(), key=lambda lst: -len(lst))}
     sheet = workbook.create_sheet(title=char)
     sheet["A1"] = "POSES"
     sheet["A1"].fill = PatternFill(patternType='solid', fill_type='solid', fgColor=Color('96BAE6'))
@@ -52,11 +51,11 @@ for char in store:
     sheet.freeze_panes = sheet["B2"]
     cur = "B"
 
-    for pose in store[char]:
+    for pose in poses:
         sheet[cur+"1"] = pose
         sheet[cur+"1"].fill = PatternFill(patternType='solid', fill_type='solid', fgColor=Color('C5D9F1'))
         maxLen = 0
-        for expr, i in zip(store[char][pose], range(1, 1+len(store[char][pose]))):
+        for expr, i in zip(poses[pose], range(1, 1+len(poses[pose]))):
             sheet[cur+str(i)] = expr
             maxLen = max(maxLen, len(expr))
 

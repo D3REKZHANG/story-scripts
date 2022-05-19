@@ -1,4 +1,5 @@
 import os, docx, openpyxl
+from helper import l_sorted
 
 '''
 OPENPYXL SECTION
@@ -24,7 +25,7 @@ workbook.close()
 
 chars = expressions.keys()
 
-direcs = ['Act 1', 'Act 2 Lilith', 'Act 2 Prim']# 'Act 3 Lilith','Act 3 Prim']
+direcs = ['Act 3 Prim']
 
 errors = {}
 
@@ -37,16 +38,25 @@ for direc in direcs:
             for run in line.runs:
                 s = run.text.split()
                 if len(s)>=3:
-                    char = s[0].replace('?', '').replace(':','')
-                    if '(' in s[1] and ')' in s[2]:
+                    x = 0
+                    if s[0] == 'Lilith’s':
+                        if len(s) < 4:
+                            continue
+                        x = 1
+                        if s[1] == 'Aunt':
+                            char = 'Lilith\'s Aunt'
+                        else:
+                            char = 'Lilith\'s Dad'
+                    else:
+                        char = s[0].replace('?', '').replace(':','')
+
+                    if '(' in s[x+1] and ')' in s[x+2]:
                         if char not in chars:
                             unlisted.add(f"{direc}/{f}: {char}")
                             continue
-                        b1 = s[1].index('(')
-                        b2 = s[2].index(')')
-                        expr = s[1][b1+1:] + " " + s[2][:b2]
-                        if expr == "shy shy":
-                            print(char)
+                        b1 = s[x+1].index('(')
+                        b2 = s[x+2].index(')')
+                        expr = s[x+1][b1+1:] + " " + s[x+2][:b2]
                         if expr not in expressions[char]:
                             file = f"{direc}/{f}"
                             expr = f"{char} ({expr})"
@@ -58,7 +68,7 @@ for direc in direcs:
 
 for key in sorted(errors.keys()):
     print(key)
-    for f in errors[key]:
+    for f in l_sorted(errors[key]):
         print("    " + f)
     print()
 

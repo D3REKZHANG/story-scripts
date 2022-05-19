@@ -3,7 +3,7 @@ import docx;
 
 s = [];
 
-direcs = ['Act 3 Prim']#['Act 1', 'Act 2 Lilith', 'Act 2 Prim', 'Act 3 Lilith','Act 3 Prim']
+direcs = ['Act 3 Lilith']#['Act 1', 'Act 2 Lilith', 'Act 2 Prim', 'Act 3 Lilith','Act 3 Prim']
 
 n= int(input("# of char: "))
 

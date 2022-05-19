@@ -3,10 +3,9 @@ import docx;
 
 #character = str(input("Character: "))
 
-characters = ["Mara", 'Lilith', 'Prim', 'Asher', 'Petra', 'Teacher', 'Mom', 'Kari', 'Iris', 'Mick', 'Roxy', 'Petrov', 'Greta', 'Lilith\'s Dad']
+characters = ["Mara", 'Lilith', 'Prim', 'Asher', 'Petra', 'Teacher', 'Mom', 'Kari', 'Iris', 'Mick', 'Roxy', 'Petrov', 'Greta', 'Lilith\'sDad', 'Lilith\'s Aunt']
 
-direcs = ['Act 1', 'Act 2 Lilith', 'Act 2 Prim']#, 'Act 3 Lilith','Act 3 Prim']
-
+direcs = ['Act 3 Prim']
 
 total = 0;
 
@@ -19,15 +18,24 @@ for char in characters:
             for line in doc.paragraphs:
                 for run in line.runs:
                     s = run.text.split()
-                    if len(s)>=3 and s[0].replace('?','').replace(':','') == char:
-                        if '(' in s[1] and ')' in s[2]:
-                            b1 = s[1].index('(')
-                            b2 = s[2].index(')')
-                            key = s[1][b1+1:] + " " + s[2][:b2]
-                            if key in expressions:
-                                expressions[key]+=1
-                            else:
-                                expressions[key]=1
+                    if len(s) >=3:
+                        x = 0
+                        if s[0] == 'Lilith’s':
+                            x=1
+                            _char = 'Lilith\'s Aunt'
+                            if len(s) < 4:
+                                continue
+                        else:
+                            _char = s[0].replace('?', '').replace(':','')
+                        if _char == char:
+                            if '(' in s[x+1] and ')' in s[x+2]:
+                                b1 = s[x+1].index('(')
+                                b2 = s[x+2].index(')')
+                                key = s[x+1][b1+1:] + " " + s[x+2][:b2]
+                                if key in expressions:
+                                    expressions[key]+=1
+                                else:
+                                    expressions[key]=1
 
     expressions = dict(sorted(expressions.items(), key=lambda item: item[1],reverse=True))
 

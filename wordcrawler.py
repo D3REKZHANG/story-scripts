@@ -1,4 +1,5 @@
 import os,docx,re
+from helper import l_sorted
 
 s = []
 
@@ -7,14 +8,16 @@ regex = str(input("Filename Regex: "))
 
 total = 0
 
-for f in os.listdir("./"+direc):
+for f in l_sorted(os.listdir("./"+direc)):
     if not re.match(regex, f):
         continue
-    print(f)
     doc = docx.Document("./"+direc+"/"+f)
+    subtotal = 0
     for line in doc.paragraphs:
         for run in line.runs:
-            total += len(run.text.split())
+            subtotal += len(run.text.split())
+    print(f'{f}: {subtotal}')
+    total+= subtotal
 
 print(total)
 

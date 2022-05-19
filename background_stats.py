@@ -21,7 +21,7 @@ if mode == 1:
 else:
     cutscenes = set()
 
-direcs = ["Act 1", "Act 2 Lilith", "Act 2 Prim"]#, "Act 3 Prim", "Act 3 Lilith"]
+direcs = ["Act 3 Prim"]#["Act 1", "Act 2 Lilith", "Act 2 Prim"]#, "Act 3 Prim", "Act 3 Lilith"]
 
 for direc in direcs:
     for f in os.listdir(f'./{direc}'):
@@ -68,7 +68,8 @@ if mode == 1:
         print(e)
 else:
     for bg in sorted(backgrounds.keys(), key=lambda x: -backgrounds[x]):
-        print(f'{bg:<30} {backgrounds[bg]}')
+        if(backgrounds[bg] > 0):
+            print(f'{bg:<30} {backgrounds[bg]}')
 
     
 print("\nCUTSCENES ----------\n")
