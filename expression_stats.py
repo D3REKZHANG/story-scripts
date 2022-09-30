@@ -5,9 +5,11 @@ import docx;
 
 characters = ["Mara", 'Lilith', 'Prim', 'Asher', 'Petra', 'Teacher', 'Mom', 'Kari', 'Iris', 'Mick', 'Roxy', 'Petrov', 'Greta', 'Lilith\'sDad', 'Lilith\'s Aunt']
 
-direcs = ['Act 3 Prim']
+direcs = ['Act 1']
 
 total = 0;
+
+mode = int(input("1. Full Expression\n2. Pose\nSelect 1 or 2: "))
 
 for char in characters:
     expressions = {}
@@ -31,7 +33,10 @@ for char in characters:
                             if '(' in s[x+1] and ')' in s[x+2]:
                                 b1 = s[x+1].index('(')
                                 b2 = s[x+2].index(')')
-                                key = s[x+1][b1+1:] + " " + s[x+2][:b2]
+                                if(mode == 1):
+                                    key = s[x+1][b1+1:] + " " + s[x+2][:b2]
+                                else:
+                                    key = s[x+1][b1+1:]
                                 if key in expressions:
                                     expressions[key]+=1
                                 else:

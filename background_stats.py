@@ -21,7 +21,7 @@ if mode == 1:
 else:
     cutscenes = set()
 
-direcs = ["Act 3 Prim"]#["Act 1", "Act 2 Lilith", "Act 2 Prim"]#, "Act 3 Prim", "Act 3 Lilith"]
+direcs = ["Act 1"]#["Act 1", "Act 2 Lilith", "Act 2 Prim"]#, "Act 3 Prim", "Act 3 Lilith"]
 
 for direc in direcs:
     for f in os.listdir(f'./{direc}'):

@@ -56,7 +56,7 @@ for char in store:
         sheet[cur+"1"].fill = PatternFill(patternType='solid', fill_type='solid', fgColor=Color('C5D9F1'))
         maxLen = 0
         for expr, i in zip(poses[pose], range(1, 1+len(poses[pose]))):
-            sheet[cur+str(i)] = expr
+            sheet[cur+str(i+1)] = expr
             maxLen = max(maxLen, len(expr))
 
         # set column width
