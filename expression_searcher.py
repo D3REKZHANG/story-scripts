@@ -4,10 +4,10 @@ from helper import l_sorted;
 
 total = 0;
 
-direcs = ['Act 1', 'Act 2 Lilith', 'Act 2 Prim', 'Act 3 Lilith','Act 3 Prim']
+direcs = ['Act 1']#, 'Act 2 Lilith', 'Act 2 Prim', 'Act 3 Lilith','Act 3 Prim']
 
 char = str(input("Character: ").strip())
-search = 'arms_crossed'#str(input("Expression: ").strip())
+search = str(input("Expression: ").strip())
 
 for direc in direcs:
     files = []
@@ -24,7 +24,7 @@ for direc in direcs:
                         b1 = s[1].index('(')
                         b2 = s[2].index(')')
                         expr = s[1][b1+1:] + " " + s[2][:b2]
-                        if s[1][b1+1:] == search:
+                        if expr == search:
                             files.append(f);
                             done = True
                             break
